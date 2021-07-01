@@ -2,7 +2,7 @@ import rospy
 from std_msgs.msg import String
 
 if __name__ == "__main__":
-	rospy.init_node("gripper_node")
+	rospy.init_node("keyboard_pub_node")
 	pub = rospy.Publisher("/keyboard_input", String, queue_size=1)
 
 	while not rospy.is_shutdown():
@@ -10,6 +10,4 @@ if __name__ == "__main__":
 		msg = String()
 		msg.data = value
 		pub.publish(msg)
-
-
 
